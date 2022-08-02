@@ -41,7 +41,7 @@ class Dev(Configuration):
         # SECURITY WARNING: don't run with debug turned on in production!
         DEBUG = True
 
-        ALLOWED_HOSTS = []
+        ALLOWED_HOSTS = ['househusband-nitrotopic-8000.codio.io']
 
 
         # Application definition
@@ -54,6 +54,7 @@ class Dev(Configuration):
             'django.contrib.messages',
             'django.contrib.staticfiles',
             'movies',
+            'gh',
         ]
 
         MIDDLEWARE = [
