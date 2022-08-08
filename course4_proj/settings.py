@@ -26,7 +26,9 @@ SESSION_COOKIE_SAMESITE = "None"
 
 
 class Dev(Configuration):
-
+        
+        CELERY_RESULT_BACKEND = "django-db"
+        CELERY_BROKER_URL = "redis://localhost:6379/0"
         OMDB_KEY = "8732a9b5"
         # Build paths inside the project like this: BASE_DIR / 'subdir'.
         BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +43,7 @@ class Dev(Configuration):
         # SECURITY WARNING: don't run with debug turned on in production!
         DEBUG = True
 
-        ALLOWED_HOSTS = ['househusband-nitrotopic-8000.codio.io']
+        ALLOWED_HOSTS = ['househusband-nitrotopic-8000.codio.io', 'danubemoney-truckpress-8000.codio.io']
 
 
         # Application definition
@@ -55,6 +57,7 @@ class Dev(Configuration):
             'django.contrib.staticfiles',
             'movies',
             'gh',
+            'django_celery_results',
         ]
 
         MIDDLEWARE = [
