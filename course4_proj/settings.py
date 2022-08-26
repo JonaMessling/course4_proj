@@ -32,6 +32,9 @@ class Dev(Configuration):
         OMDB_KEY = "8732a9b5"
         # Build paths inside the project like this: BASE_DIR / 'subdir'.
         BASE_DIR = Path(__file__).resolve().parent.parent
+        EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+        ADMINS = [("Ben", "ben@example.com")]
+
 
 
         # Quick-start development settings - unsuitable for production
